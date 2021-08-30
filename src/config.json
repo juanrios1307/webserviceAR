@@ -1,0 +1,8 @@
+{
+  "host_mysql": "localhost",
+  "username_mysql":"root" ,
+  "pwd_mysql": "12345678",
+  "dbname_mysql": "alcaldia",
+  "port_mysql": 3306,
+  "secret_jwt": "..."
+}
