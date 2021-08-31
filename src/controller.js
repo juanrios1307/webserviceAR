@@ -21,7 +21,7 @@ ControllerMain.api = async (req,res) =>{
             if (err)
                 res.send(err);
             else {
-                if (i = respuesta.data.length-1) {
+                if (i == respuesta.data.length-1) {
                     res.json({error: false, message: "Object Added!"});
                 }
             }
