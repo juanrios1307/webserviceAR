@@ -16,12 +16,19 @@ ControllerMain.api = async (req,res) =>{
     const respuesta = await axios(config)
 
     //Propuesta 1 SQL
-    Object.create(new Object(respuesta.data[0]), function(err, object) {
-        if (err)
-            res.send(err);
-        else
-            res.json({error:false,message:"Object Added!"});
-    });
+    for(var i =0; i<respuesta.data.length ; i++){
+        Object.create(new Object(respuesta.data[i]), function(err, object) {
+            if (err)
+                res.send(err);
+            else {
+                if (i = respuesta.data.length-1) {
+                    res.json({error: false, message: "Object Added!"});
+                }
+            }
+        });
+    }
+
+
 
     //Propuesta 2
     /*var thingSchema = new Schema({}, { strict: false });
