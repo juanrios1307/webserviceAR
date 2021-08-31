@@ -2,8 +2,8 @@ const express=require('express')
 const app=express()
 const bodyparser=require('body-parser')
 
-//require('./databaseMySQL')
-require('./databaseMongoDB')
+require('./databaseMySQL')
+//require('./databaseMongoDB')
 
 app.set('Port',5000)
 

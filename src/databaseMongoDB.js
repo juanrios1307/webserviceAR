@@ -1,6 +1,6 @@
 const mongoose=require('mongoose')
 
-const mongouri='mongodb+srv://admin:admin@cluster0.ocpxg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const mongouri='mongodb+srv://admin:admin@cluster0.ocpxg.mongodb.net/data?retryWrites=true&w=majority'
 //const mongouri=process.env.DB_URI
 
 
