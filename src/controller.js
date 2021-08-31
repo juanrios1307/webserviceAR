@@ -2,6 +2,7 @@ const ControllerMain={}
 const mongoose = require('mongoose')
 const axios = require('axios')
 const {Schema} = require("mongoose");
+const Object = require('./model')
 
 ControllerMain.api = async (req,res) =>{
 
