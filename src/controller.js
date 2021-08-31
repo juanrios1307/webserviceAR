@@ -33,7 +33,7 @@ ControllerMain.api = async (req,res) =>{
     //Propuesta 2
     /*var thingSchema = new Schema({}, { strict: false });
     var Thing = mongoose.model('data', thingSchema);
-    var thing = new Thing(respuesta.data[0]);*/
+    var thing = new Thing(respuesta.data[0]);
 
 
     thing.save()
@@ -42,7 +42,7 @@ ControllerMain.api = async (req,res) =>{
         })
         .catch(err => {
             res.send(err);
-        });
+        });*/
 
 }
 
