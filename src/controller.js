@@ -14,7 +14,7 @@ ControllerMain.api = async (req,res) =>{
 
     const respuesta = await axios(config)
 
-    console.log(respuesta.data[0])
+    console.log(respuesta.data.length)
 
     //Propuesta 1 SQL
     for(var i =0; i<respuesta.data.length ; i++){
