@@ -23,7 +23,7 @@ var Object = function(object){
 }
 
 Object.create = function(obejct, result) {
-    dbConn.query("INSERT INTO objects set ?",obejct,function(err,res){
+    dbConn.getConnection().query("INSERT INTO objects set ?",obejct,function(err,res){
         if(err) {
             console.log("error: ", err);
             result(err, null);

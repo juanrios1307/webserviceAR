@@ -1,19 +1,24 @@
-var mysql = require('mysql');
-const config = require("./config.json");
+import sql from "mssql";
+import config from "./config";
 
-var con = mysql.createConnection({
-    host: config.host_mysql,
-    user: config.username_mysql,
-    password: config.pwd_mysql,
-    database: config.dbname_mysql,
-    port: config.port_mysql
-});
+export const dbSettings = {
+    user: config.dbUser,
+    password: config.dbPassword,
+    server: config.dbServer,
+    database: config.dbDatabase,
+    options: {
+        encrypt: false, // for azure
+        trustServerCertificate: true, // change to true for local dev / self-signed certs
+    },
+};
 
-con.connect(function(err) {
-    if (err)
-        throw err;
-    console.log("Connected TO DB Mysql!");
+export const getConnection = async () => {
+    try {
+        const pool = await sql.connect(dbSettings);
+        return pool;
+    } catch (error) {
+        console.error(error);
+    }
+};
 
-});
-
-module.exports = con
+export { sql };

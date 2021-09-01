@@ -1,8 +1,8 @@
 {
-  "host_mysql": "localhost",
-  "username_mysql":"root" ,
-  "pwd_mysql": "12345678",
-  "dbname_mysql": "alcaldia",
+  "dbServer": "dbServer",
+  "dbUser":"root" ,
+  "dbPassword": "12345678",
+  "dbDatabase": "alcaldia",
   "port_mysql": 3306,
   "secret_jwt": "..."
 }
