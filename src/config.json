@@ -1,8 +1,6 @@
 {
-  "dbServer": "dbServer",
-  "dbUser":"root" ,
-  "dbPassword": "12345678",
-  "dbDatabase": "alcaldia",
-  "port_mysql": 3306,
-  "secret_jwt": "..."
+  "dbServer": "localhost",
+  "dbUser":"SA" ,
+  "dbPassword": "el1primero.",
+  "dbDatabase": "alcaldia"
 }

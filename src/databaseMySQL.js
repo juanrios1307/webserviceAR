@@ -1,24 +1,22 @@
-import sql from "mssql";
-import config from "./config";
+const sql = require("mssql");
+const config =require("./config");
 
-export const dbSettings = {
-    user: config.dbUser,
-    password: config.dbPassword,
-    server: config.dbServer,
-    database: config.dbDatabase,
-    options: {
-        encrypt: false, // for azure
-        trustServerCertificate: true, // change to true for local dev / self-signed certs
-    },
-};
+var connection ={}
 
-export const getConnection = async () => {
-    try {
-        const pool = await sql.connect(dbSettings);
-        return pool;
-    } catch (error) {
-        console.error(error);
-    }
-};
+connection.getConnection = async() =>{
+    var pool =await sql.connect({
+        user: config.dbUser,
+        password: config.dbPassword,
+        server: config.dbServer,
+        database: config.dbDatabase,
+        options: {
+            encrypt: false, // for azure
+            trustServerCertificate: true, // change to true for local dev / self-signed certs
+        },
+    });
+    return pool;
+}
 
-export { sql };
+
+
+module.exports = connection

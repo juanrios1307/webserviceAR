@@ -1,7 +1,5 @@
 const ControllerMain={}
-const mongoose = require('mongoose')
 const axios = require('axios')
-const {Schema} = require("mongoose");
 const Object = require('./model')
 
 ControllerMain.api = async (req,res) =>{
@@ -16,18 +14,17 @@ ControllerMain.api = async (req,res) =>{
 
     const respuesta = await axios(config)
 
+    console.log(respuesta.data[0])
+
     //Propuesta 1 SQL
     for(var i =0; i<respuesta.data.length ; i++){
-        Object.create(new Object(respuesta.data[i]), function(err, object) {
-            if (err)
-                res.send(err);
-            else {
-                if (i == respuesta.data.length-1) {
-                    res.json({error: false, message: "Object Added!"});
-                }
-            }
-        });
+
+        await Object.create(new Object(respuesta.data[i]));
+
+
     }
+
+    res.json("OK")
 
 
 
