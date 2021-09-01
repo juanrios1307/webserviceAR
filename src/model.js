@@ -16,6 +16,9 @@ var Object = function(object){
         this.VLR_ING_MES_ANT = object.VLR_ING_MES_ANT
         this.VLR_ING_MES_ACT = object.VLR_ING_MES_ACT
         this.VLR_TOT_ING  = object.VLR_TOT_ING
+        this.A_VLR_TOT_PPTO_A_VLR_TOT_ING = object.A_VLR_TOT_PPTO_A_VLR_TOT_ING
+
+
 }
 
 Object.create = async function(obj) {
@@ -41,10 +44,10 @@ Object.create = async function(obj) {
             .input("VLR_TOT_ING", sql.VarChar, obj.VLR_TOT_ING)
             .query( "INSERT INTO objects " +
                 "(CONS_PPT,FINAL,CODIGO_COMPLETO,DESCRIPCION,FONDO,VLR_APROBADO,VLR_TOT_AP,VLR_TOT_RP,VLR_TOT_TP_AD," +
-                "VLR_TOT_TP_RE,VLR_TOT_PPTO,VLR_SAL_CAJA,VLR_ING_MES_ANT,VLR_ING_MES_ACT,VLR_TOT_ING) " +
+                "VLR_TOT_TP_RE,VLR_TOT_PPTO,VLR_SAL_CAJA,VLR_ING_MES_ANT,VLR_ING_MES_ACT,VLR_TOT_ING,A.VLR_TOT_PPTO-A.VLR_TOT_ING) " +
                 "VALUES " +
                 "(@CONS_PPT,@FINAL,@CODIGO_COMPLETO,@DESCRIPCION,@FONDO,@VLR_APROBADO,@VLR_TOT_AP,@VLR_TOT_RP,@VLR_TOT_TP_AD," +
-                "@VLR_TOT_TP_RE,@VLR_TOT_PPTO,@VLR_SAL_CAJA,@VLR_ING_MES_ANT,@VLR_ING_MES_ACT,@VLR_TOT_ING);")
+                "@VLR_TOT_TP_RE,@VLR_TOT_PPTO,@VLR_SAL_CAJA,@VLR_ING_MES_ANT,@VLR_ING_MES_ACT,@VLR_TOT_ING,@A.VLR_TOT_PPTO-A.VLR_TOT_ING);")
 
     }catch (error){
         console.log("error: ", error);
