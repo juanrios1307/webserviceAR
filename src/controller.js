@@ -19,6 +19,8 @@ ControllerMain.api = async (req,res) =>{
     //Propuesta 1 SQL
     for(var i =0; i<respuesta.data.length ; i++){
 
+        respuesta.data[i].A_VLR_TOT_PPTO_A_VLR_TOT_ING= respuesta.data[i].A.VLR_TOT_PPTO-A.VLR_TOT_ING
+
         await Object.create(new Object(respuesta.data[i]));
 
 
